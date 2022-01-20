@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+    
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Weather App</title>
+        <link rel="stylesheet" href="./css/style.css">
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    </head>
+
+    <header>
+
+        <div class="topnav">
+            <img id="logo" src="./icons/logo.png"/>
+            <a id="home" class="waves-effect waves-light">Accueil</a>
+            <a id="contact" class="waves-effect waves-light">Contact</a>
+            <a id="help" class="waves-effect waves-light">Aide</a>
+        </div> 
+
+    </header>
+
+    <body>
+
+        <div id="home_view">
+            <input id="search_bar" type="text" placeholder="Saisir une ville...">
+            <button id="go_button" class="waves-effect waves-light btn" type="submit">Go</button><br>
+
+            <div class="cadre" id="weather_cadre">
+                <label id="sous_titre">Météo du jour</label>
+                
+                <div id="weather_result"></div>
+                <button id="see_more" class="waves-effect waves-light" type="button">Afficher plus</button>
+            </div>
+        </div>
+
+        <div id="contact_view">
+            <div class="cadre">
+                <label id="sous_titre"> Une question ? Une remarque ?</label>
+                <p>N'hésitez pas à consulter notre <a class="ext_link" href="https://github.com/dowymn" target="_blank">github</a>.</p>
+
+            </div>
+        </div>
+
+        <div id="help_view">
+            <div class="cadre">
+                <label id="sous_titre"> Comment se servir de WeatherApp ?</label>
+
+                <p>C'est très simple ! Il suffit de renseigner le nom de la ville dont vous souhaitez connaître la météo dans la barre de recherche.</p><br/>
+                <input id="search_bar" type="text" placeholder="Saisir une ville...">
+
+                <p>Puis de cliker sur le bouton "GO" !</p>
+                <button id="go_button" class="waves-effect waves-light btn">Go</button>
+
+                <br/>
+                <button id="back_to_home" class="waves-effect waves-light">Retour à l'accueil</button>
+            </div>
+        </div>
+        
+        <!-- SCRIPTS -->
+        <noscript>Please allow JavaScript so the app can work.</noscript>
+        <!-- JavaScript main script -->
+        <script src="./js/app.js"></script>
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+    </body>
+
+    <footer>
+
+        <p>WeatherApp est une application permettant de consulter la météo du jour pour une ville donnée.</p> 
+        <p>Elle a été réalisée lors d'un TP de dev web, ce qui explique son utilité assez relative.</p>
+
+    </footer>
+
+
+</html>
