@@ -28,14 +28,28 @@
 
     <body>
 
+        <!-- SCRIPTS -->
+        <noscript>Please allow JavaScript so the app can work.</noscript>
+         <!-- JQuery -->
+         <script src="js/jquery-3.6.0.min.js"></script>
+        <!-- JavaScript main script -->
+        <script src="./js/app.js"></script>
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
         <div id="home_view">
-            <input id="search_bar" type="text" placeholder="Saisir une ville...">
-            <button id="go_button" class="waves-effect waves-light btn" type="submit">Go</button><br>
+            <div class="input-field col s6">
+                <input id="search_bar" class="border-indigo border-lighten-3" type="text" class="validate">
+                <label for="search_bar">Saisir une ville</label>
+                <button id="go_button" class="waves-effect waves-light btn" type="submit">Go</button><br>
+            </div>
+            
 
             <div class="cadre" id="weather_cadre">
                 <label id="sous_titre">Météo du jour</label>
                 
-                <div id="weather_result"></div>
+                <div class="weather"></div>
+                <div class="full_weather"></div>
                 <button id="see_more" class="waves-effect waves-light" type="button">Afficher plus</button>
             </div>
         </div>
@@ -53,7 +67,10 @@
                 <label id="sous_titre"> Comment se servir de WeatherApp ?</label>
 
                 <p>C'est très simple ! Il suffit de renseigner le nom de la ville dont vous souhaitez connaître la météo dans la barre de recherche.</p><br/>
-                <input id="search_bar" type="text" placeholder="Saisir une ville...">
+                <div class="input-field col s6">
+                    <input id="search_bar_help" type="text" class="validate">
+                    <label for="search_bar_help">Saisir une ville</label>
+                </div>
 
                 <p>Puis de cliker sur le bouton "GO" !</p>
                 <button id="go_button" class="waves-effect waves-light btn">Go</button>
@@ -63,19 +80,14 @@
             </div>
         </div>
         
-        <!-- SCRIPTS -->
-        <noscript>Please allow JavaScript so the app can work.</noscript>
-        <!-- JavaScript main script -->
-        <script src="./js/app.js"></script>
-        <!--JavaScript at end of body for optimized loading-->
-        <script type="text/javascript" src="js/materialize.min.js"></script>
+        
 
     </body>
 
     <footer>
 
         <p>WeatherApp est une application permettant de consulter la météo du jour pour une ville donnée.</p> 
-        <p>Elle a été réalisée lors d'un TP de dev web, ce qui explique son utilité assez relative.</p>
+        <p>Elle a été réalisée dans le cadre d'un TP de developpement web.</p>
 
     </footer>
 
