@@ -11,25 +11,25 @@ $(document).ready(function() {
             // we disable the button to prevent multiple clicks
             $("#go_button").disabled=true;
 
-            // if this is the first ciry the user enters, hides the button
+            // if this is the first city the user enters, hides the button
             if ( weather == "" ) {
                 $("#see_more").slideUp("slow", function() {});
             }
-
-            // we make sure the weather and fullWeather variables are empty
-            // to allow the user to check the weather for another city without refreshing the page
-            weather = "";
-            fullWeather = "";
-
-            // see_more button initialization
-            $("#see_more").text("Afficher plus");
 
             // short weather bloc initialization
             $(".weather").slideUp("slow", function() {});
             $(".weather").slideDown("slow", function() {});
 
+            // see_more button initialization
+            $("#see_more").text("Afficher plus");
+
             // full weather bloc initialization
             $(".full_weather").slideUp("slow", function() {});
+
+            // we make sure the weather and fullWeather variables are empty
+            // to allow the user to check the weather for another city without refreshing the page
+            weather = "";
+            fullWeather = "";
 
             var request = "https://api.openweathermap.org/data/2.5/weather?q=" 
             + $('#search_bar').val()
@@ -105,10 +105,27 @@ $(document).ready(function() {
                         fullWeather += "<img src=\"./icons/other/wi-strong-wind.svg\"/>" + "Vent : " + arr.wind.speed + " m/s <br/><br/>";
 
                         // sunrise and sunset hours
+                        
                         var sunrise = new Date(arr.sys.sunrise * 1000);
-                        fullWeather += "<img src=\"./icons/other/wi-horizon-alt.svg\"/>" + "Lever de soleil : " + sunrise.getHours() + "h" + sunrise.getMinutes() + "<br/>";
+                        hh = sunrise.getHours();
+                        if ( hh < 10 ) {
+                            hh = "0"+hh;
+                        }
+                        mn = sunrise.getMinutes()
+                        if ( mn < 10 ) {
+                            mn = "0"+mn;
+                        }
+                        fullWeather += "<img src=\"./icons/other/wi-horizon-alt.svg\"/>" + "Lever de soleil : " + hh + "h" + mn + "<br/>";
                         var sunset = new Date(arr.sys.sunset * 1000);
-                        fullWeather += "<img src=\"./icons/other/wi-horizon.svg\"/>" + "Coucher de soleil : " + sunset.getHours() + "h" + sunset.getMinutes() + "<br/>";
+                        hh = sunset.getHours();
+                        if ( hh < 10 ) {
+                            hh = "0"+hh;
+                        }
+                        mn = sunset.getMinutes()
+                        if ( mn < 10 ) {
+                            mn = "0"+mn;
+                        }
+                        fullWeather += "<img src=\"./icons/other/wi-horizon.svg\"/>" + "Coucher de soleil : " + hh + "h" + mn + "<br/>";
 
                         // we add the weather information to the weather block
                         $('.weather').html(weather);
